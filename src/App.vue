@@ -5,9 +5,9 @@
       <AccountInfo />
     </v-row>
     <v-row>
-      <div>крестик</div>
+      <CloseButtonIcon />
       <MainContent />
-      <div>лампочка</div>
+      <HelpButtonIcon />
     </v-row>
   </v-container>
 
@@ -19,9 +19,13 @@
 import AccountInfo from "@/components/AccountInfo.vue";
 import MainContent from "@/components/MainContent.vue";
 import AnswerButtonsBlock from "@/components/AnswerButtonsBlock.vue";
+import CloseButtonIcon from "@/components/icons/CloseButtonIcon.vue";
+import HelpButtonIcon from "@/components/icons/HelpButtonIcon.vue";
+
+
 
 export default {
-  components: { AccountInfo, MainContent, AnswerButtonsBlock },
+  components: { AccountInfo, MainContent, AnswerButtonsBlock, CloseButtonIcon, HelpButtonIcon },
 
   data() {
     return {
