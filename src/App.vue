@@ -60,11 +60,22 @@ export default {
   },
 
   methods: {
+    async getTasks() {
+      try {
+        const resp = await fetchTasksData();
+        console.log(resp)
+        await this.$tasksStore.changeTasks(resp); // refresh store tasks data
 
+      } catch (error) {
+        alert(error.message)
+      }
+
+
+
+    }
   },
   async mounted() {
-    const resp = await fetchTasksData();
-    console.log(resp)
+    await this.getTasks()
   }
 }
 </script>

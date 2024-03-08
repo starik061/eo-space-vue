@@ -3,6 +3,9 @@ import '../main.scss'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
+import { useTasksStore } from '@/store/tasks'
+// Добавляем экземпляр хранилища в глобальное свойство приложения
+
 import App from './App.vue'
 
 // Vuetify
@@ -20,6 +23,8 @@ const vuetify = createVuetify({
 const app = createApp(App)
 
 app.use(createPinia())
+app.config.globalProperties.$tasksStore = useTasksStore()
+
 app.use(vuetify)
 
 app.mount('#app')
