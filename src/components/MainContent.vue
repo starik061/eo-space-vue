@@ -1,6 +1,11 @@
 <template>
     <div>
-        Task description
+        <h2>Task type</h2>
+        <h3>Task question</h3>
+        <div>
+            <p>Content</p>
+            <img src="" alt="">
+        </div>
     </div>
 </template>
 

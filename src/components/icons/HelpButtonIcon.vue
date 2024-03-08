@@ -1,14 +1,29 @@
 <template>
-    <div class="coin">
+    <div class="btn">
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.coin {
-    width: 30px;
-    height: 30px;
+.btn {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 8px;
     background-image: url("/bulb.png");
-    background-size: cover;
+    background-size: 70%;
+    background-position: center;
+    background-color: #ebe9e9;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 6px 0px 0px rgba(189, 191, 209, 1);
+    -moz-box-shadow: 0px 6px 0px 0px rgba(189, 191, 209, 1);
+    box-shadow: 0px 4px 0px 0px rgba(189, 191, 209, 1);
+
+    &:hover,
+    :focus {
+        box-shadow: 0px 4px 0px 0px #fcfc7f;
+    }
 }
 </style>

@@ -23,7 +23,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 5px;
+    gap: 0;
+    font-size: 24px;
 }
 
 .account--coins-info {

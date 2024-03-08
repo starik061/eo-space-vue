@@ -1,13 +1,20 @@
 <template>
+  <h1 class="visually-hidden">Questions</h1>
   <v-container>
     <v-row>
       <v-spacer />
       <AccountInfo />
     </v-row>
     <v-row>
-      <CloseButtonIcon />
-      <MainContent />
-      <HelpButtonIcon />
+      <v-col cols="1">
+        <CloseButtonIcon />
+      </v-col>
+      <v-col cols="10">
+        <MainContent />
+      </v-col>
+      <v-col cols="1">
+        <HelpButtonIcon />
+      </v-col>
     </v-row>
   </v-container>
 
