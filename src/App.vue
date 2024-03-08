@@ -20,27 +20,22 @@
 
           <template v-slot:default="{ isActive }">
             <v-card>
-
               <v-card-text class="text-h2 pa-12"> Hello world! </v-card-text>
-
               <v-card-actions class="justify-end">
                 <v-btn text="Close" @click="isActive.value = false"></v-btn>
               </v-card-actions>
             </v-card>
           </template>
         </v-dialog>
-
       </v-col>
     </v-row>
   </v-container>
 
-  <AnswerButtonsBlock v-if="tasksData.length > 0" :answerOptions="tasksData[currentTask - 1]['answer options']"
-    @checkAnswer="checkAnswer" />
-
+  <AnswerButtonsBlock v-if="tasksData.length > 0 && currentTask && tasksData[currentTask - 1]['answer options']"
+    :answerOptions="tasksData[currentTask - 1]['answer options']" @checkAnswer="checkAnswer" />
 </template>
 
 <script>
-
 import AccountInfo from "@/components/AccountInfo.vue";
 import MainContent from "@/components/MainContent.vue";
 import AnswerButtonsBlock from "@/components/AnswerButtonsBlock.vue";
@@ -48,7 +43,6 @@ import CloseButtonIcon from "@/components/icons/CloseButtonIcon.vue";
 import HelpButtonIcon from "@/components/icons/HelpButtonIcon.vue";
 
 import { fetchTasksData } from "./api/index.js";
-
 
 export default {
   components: { AccountInfo, MainContent, AnswerButtonsBlock, CloseButtonIcon, HelpButtonIcon },
@@ -58,25 +52,25 @@ export default {
       currentTask: 1
     }
   },
+
   computed: {
     tasksData() {
       return this.$tasksStore.getTasks
     }
   },
+
   methods: {
     async getTasks() {
       try {
         const resp = await fetchTasksData();
-        console.log(resp)
         await this.$tasksStore.changeTasks(resp); // refresh store tasks data
 
       } catch (error) {
         alert(error.message)
       }
-
     },
+
     checkAnswer(payload) {
-      console.log(typeof payload)
       if (payload === this.tasksData[this.currentTask - 1]["correct answers"]) {
         alert("Your answer is CORRECT!!! CONGRATULATIONS!!!");
         this.currentTask += 1;
@@ -86,10 +80,9 @@ export default {
       }
     }
   },
+
   async mounted() {
     await this.getTasks()
   }
 }
-</script>
-
-<style scoped lang="scss"></style>
+</script>s
