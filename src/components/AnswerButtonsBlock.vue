@@ -1,8 +1,9 @@
 <template>
     <form class="btn-container" v-if="answerOptions" @submit.prevent="checkAnswers">
-        <template v-for="option in answerOptions" :key="option">
-            <input class="visually-hidden" :id="option" type="radio" :value="option" :name="option[' multiple choice']">
-            <label for="answerA" class="btn">{{ option }}
+        <template v-for="(option, optionIndex) in answerOptions" :key="optionIndex">
+            <input class="visually-hidden" :id="option" type="radio" :value="option"
+                :name="radioButtonName(optionIndex)" />
+            <label :for="option" class="btn">{{ option }}
             </label>
         </template>
 
@@ -15,9 +16,22 @@ export default {
     props: {
         answerOptions: {
             type: Array
+        },
+        multipleChoice: {
+            type: Boolean,
+            default: false
         }
     },
-
+    computed: {
+        radioButtonName() {
+            return (idx) => {
+                if (this.multipleChoice === true) {
+                    return `answer${idx}`;
+                }
+                return "answer";
+            }
+        }
+    },
     methods: {
         checkAnswers() {
             console.log("first")

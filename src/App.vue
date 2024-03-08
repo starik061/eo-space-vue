@@ -34,7 +34,8 @@
     </v-row>
   </v-container>
 
-  <AnswerButtonsBlock v-if="tasksData.length > 0" :answerOptions="tasksData[currentTask - 1]['answer options']" />
+  <AnswerButtonsBlock v-if="tasksData.length > 0" :answerOptions="tasksData[currentTask - 1]['answer options']"
+    :multipleChoice="tasksData[currentTask - 1]['multiple choice']" />
 
 
 
