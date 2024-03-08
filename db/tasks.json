@@ -1,0 +1,41 @@
+[
+  {
+    "task text": "Which shape shows thirds?",
+    "task conditions": "Choose the right answer",
+    "task image": "/public/tasks_images/task_img1.png",
+    "correct answers": ["A"],
+    "answer options": "single",
+    "multiple choice": false
+  },
+  {
+    "task text": "What is the capital of France?",
+    "task conditions": "Select the correct option",
+    "task image": "/public/tasks_images/task_img2.png",
+    "correct answers": ["Paris"],
+    "answer options": ["Paris", "Berlin", "London", "Madrid"]
+  },
+  {
+    "task text": "Who wrote 'Romeo and Juliet'?",
+    "task conditions": "Choose the correct author",
+    "task image": "/public/tasks_images/task_img3.png",
+    "correct answers": ["William Shakespeare"],
+    "answer options": ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"],
+    "multiple choice": false
+  },
+  {
+    "task text": "What genders are there in the human species?",
+    "task conditions": "Select all correct varints",
+    "task image": "/public/tasks_images/task_img4.png",
+    "correct answers": ["male", "female"],
+    "answer options": ["male", "female", "LGBTQ++"],
+    "multiple choice": true
+  },
+  {
+    "task text": "What is the chemical symbol for gold?",
+    "task conditions": "Choose the correct symbol",
+    "task image": "/public/tasks_images/task_img5.png",
+    "correct answers": ["Au"],
+    "answer options": ["Ag", "Fe", "Au", "Cu"],
+    "multiple choice": false
+  }
+]
