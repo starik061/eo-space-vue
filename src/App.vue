@@ -10,7 +10,7 @@
         <CloseButtonIcon />
       </v-col>
       <v-col cols="10" class="d-flex justify-center align-start">
-        <MainContent />
+        <MainContent :task="tasksData[currentTask - 1]" />
       </v-col>
       <v-col cols="1" class="d-flex justify-end align-start">
         <v-dialog transition="dialog-bottom-transition" width="auto">
@@ -34,7 +34,8 @@
     </v-row>
   </v-container>
 
-  <AnswerButtonsBlock />
+  <AnswerButtonsBlock v-if="tasksData.length > 0" :answerOptions="tasksData[currentTask - 1]['answer options']" />
+
 
 
 </template>
@@ -55,10 +56,14 @@ export default {
 
   data() {
     return {
-
+      currentTask: 1
     }
   },
-
+  computed: {
+    tasksData() {
+      return this.$tasksStore.getTasks
+    }
+  },
   methods: {
     async getTasks() {
       try {

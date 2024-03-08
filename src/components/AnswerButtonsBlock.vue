@@ -1,21 +1,28 @@
 <template>
-    <div class="btn-container">
-        <input class="visually-hidden" id="answerA" type="radio" value="A" name="answer">
-        <label for="answerA" class="btn">A
-        </label>
-        <input class="visually-hidden" id="answerB" type="radio" value="B" name="answer">
-        <label for="answerB" class="btn">B
-        </label>
-        <input class="visually-hidden" id="answerC" type="radio" value="C" name="answer">
-        <label for="answerC" class="btn">C
-        </label>
+    <form class="btn-container" v-if="answerOptions" @submit.prevent="checkAnswers">
+        <template v-for="option in answerOptions" :key="option">
+            <input class="visually-hidden" :id="option" type="radio" :value="option" :name="option[' multiple choice']">
+            <label for="answerA" class="btn">{{ option }}
+            </label>
+        </template>
+
         <button class="btn check-btn" type="submit">Check</button>
-    </div>
+    </form>
 </template>
 
 <script>
 export default {
+    props: {
+        answerOptions: {
+            type: Array
+        }
+    },
 
+    methods: {
+        checkAnswers() {
+            console.log("first")
+        }
+    }
 }
 </script>
 
