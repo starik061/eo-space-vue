@@ -35,9 +35,7 @@
   </v-container>
 
   <AnswerButtonsBlock v-if="tasksData.length > 0" :answerOptions="tasksData[currentTask - 1]['answer options']"
-    :multipleChoice="tasksData[currentTask - 1]['multiple choice']" />
-
-
+    @checkAnswer="checkAnswer" />
 
 </template>
 
@@ -76,8 +74,16 @@ export default {
         alert(error.message)
       }
 
-
-
+    },
+    checkAnswer(payload) {
+      console.log(typeof payload)
+      if (payload === this.tasksData[this.currentTask - 1]["correct answers"]) {
+        alert("Your answer is CORRECT!!! CONGRATULATIONS!!!");
+        this.currentTask += 1;
+      } else {
+        alert(`UPSS...!!Your answer is INCORRECT!!! Correct answer is ${this.tasksData[this.currentTask - 1]["correct answers"]}`);
+        this.currentTask += 1;
+      }
     }
   },
   async mounted() {

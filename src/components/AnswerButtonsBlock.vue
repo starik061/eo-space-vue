@@ -1,8 +1,8 @@
 <template>
-    <form class="btn-container" v-if="answerOptions" @submit.prevent="checkAnswers">
+    <form class="btn-container" v-if="answerOptions" @submit.prevent="handleSubmit">
         <template v-for="(option, optionIndex) in answerOptions" :key="optionIndex">
-            <input class="visually-hidden" :id="option" type="radio" :value="option"
-                :name="radioButtonName(optionIndex)" />
+            <input class="visually-hidden" :id="option" type="radio" :value="option" name="answer"
+                v-model="selectedAnswer" />
             <label :for="option" class="btn">{{ option }}
             </label>
         </template>
@@ -16,25 +16,25 @@ export default {
     props: {
         answerOptions: {
             type: Array
-        },
-        multipleChoice: {
-            type: Boolean,
-            default: false
         }
     },
-    computed: {
-        radioButtonName() {
-            return (idx) => {
-                if (this.multipleChoice === true) {
-                    return `answer${idx}`;
-                }
-                return "answer";
-            }
+    emits: ["checkAnswer"],
+
+    data() {
+        return {
+            selectedAnswer: null
         }
     },
+
     methods: {
-        checkAnswers() {
-            console.log("first")
+        handleSubmit() {
+            if (!this.selectedAnswer) {
+                alert("Please select the answer");
+                return
+            }
+
+            this.$emit("checkAnswer", this.selectedAnswer)
+            this.selectedAnswer = null;
         }
     }
 }
