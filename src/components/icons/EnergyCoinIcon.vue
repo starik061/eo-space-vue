@@ -8,7 +8,7 @@
 .coin {
     width: 20px;
     height: 20px;
-    background-image: url("../../assets/coin.png");
+    background-image: url("/coin.png");
     background-size: cover;
 }
 </style>
