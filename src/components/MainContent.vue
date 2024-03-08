@@ -1,9 +1,10 @@
 <template>
     <div v-if="task">
-        <h2>{{ task["task conditions"] }}</h2>
-        <h3>{{ task["task text"] }}</h3>
+        <h2 class=" task-conditions d-flex justify-center align-start">{{ task["task conditions"] }}</h2>
+        <h3 class="task-text d-flex justify-center align-start">{{ task["task text"] }}</h3>
 
-        <img class="task-image" :src="task['task image']" :alt="task['task text']" width="900px" height="500px">
+        <img v-if="task['task image']" class="task-image d-flex justify-center align-start" :src="task['task image']"
+            :alt="task['task text']">
     </div>
 </template>
 
@@ -18,7 +19,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.task-conditions {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.task-text {
+    margin-bottom: 120px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+}
+
 .task-image {
+    width: 100%;
     object-fit: contain;
 }
 </style>

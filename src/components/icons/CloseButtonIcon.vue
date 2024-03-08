@@ -6,15 +6,16 @@
 
 <style lang="scss" scoped>
 .btn {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
     width: 50px;
     height: 50px;
+    padding: 8px 8px;
     background-image: url("/close_btn.png");
     background-size: 70%;
     background-position: center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 8px 8px;
     background-color: #ebe9e9;
     border-radius: 5px;
     -webkit-box-shadow: 0px 6px 0px 0px rgba(189, 191, 209, 1);

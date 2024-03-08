@@ -7,6 +7,7 @@
 <style lang="scss" scoped>
 .btn {
     display: flex;
+    flex-shrink: 0;
     width: 50px;
     height: 50px;
     justify-content: flex-start;
