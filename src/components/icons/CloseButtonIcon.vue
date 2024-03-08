@@ -12,7 +12,7 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    padding: 8px 8px;
+    padding: 8px;
     background-image: url("/close_btn.png");
     background-size: 70%;
     background-position: center;
@@ -25,6 +25,13 @@
     &:hover,
     :focus {
         box-shadow: 0px 4px 0px 0px #fcfc7f;
+    }
+
+    @media (max-width: 575px) {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        background-size: 50%;
     }
 }
 </style>

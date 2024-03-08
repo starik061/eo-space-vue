@@ -26,5 +26,12 @@
     :focus {
         box-shadow: 0px 4px 0px 0px #fcfc7f;
     }
+
+    @media (max-width: 575px) {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        background-size: 50%;
+    }
 }
 </style>

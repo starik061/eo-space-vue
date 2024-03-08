@@ -30,6 +30,10 @@ export default {
     align-items: flex-start;
     gap: 0;
     font-size: 24px;
+
+    @media (max-width: 575px) {
+        font-size: 20px;
+    }
 }
 
 .account--coins-info {

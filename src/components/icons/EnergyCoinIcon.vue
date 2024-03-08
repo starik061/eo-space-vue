@@ -10,5 +10,10 @@
     height: 20px;
     background-image: url("/coin.png");
     background-size: cover;
+
+    @media (max-width: 575px) {
+        width: 17px;
+        height: 17px;
+    }
 }
 </style>

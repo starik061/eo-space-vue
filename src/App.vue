@@ -5,14 +5,14 @@
       <v-spacer />
       <AccountInfo />
     </v-row>
-    <v-row>
-      <v-col cols="1" class="d-flex justify-start align-start">
+    <v-row no-wrap>
+      <v-col cols="2" class="d-flex justify-start align-start">
         <CloseButtonIcon />
       </v-col>
-      <v-col cols="10" class="d-flex justify-center align-start">
+      <v-col cols="8" class="d-flex justify-center align-start">
         <MainContent :task="tasksData[currentTask - 1]" />
       </v-col>
-      <v-col cols="1" class="d-flex justify-end align-start">
+      <v-col cols="2" class="d-flex justify-end align-start">
         <v-dialog transition="dialog-bottom-transition" width="auto">
           <template v-slot:activator="{ props: activatorProps }">
             <HelpButtonIcon v-bind="activatorProps" />

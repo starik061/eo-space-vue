@@ -51,6 +51,14 @@ export default {
     padding: 10px 10px 14px 10px;
     background-color: #858585;
     font-size: 30px;
+
+    @media (max-width: 575px) {
+        font-size: 24px;
+    }
+
+    @media (max-width: 338px) {
+        font-size: 18px;
+    }
 }
 
 .btn {
@@ -68,6 +76,14 @@ export default {
     &:hover,
     :focus {
         box-shadow: 0px 4px 0px 0px #fcfc7f;
+    }
+
+    @media (max-width: 575px) {
+        padding: 5px 10px;
+    }
+
+    @media (max-width: 338px) {
+        padding: 4px 7px;
     }
 }
 

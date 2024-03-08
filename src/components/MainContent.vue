@@ -25,6 +25,11 @@ export default {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;
+
+    @media (max-width: 575px) {
+        margin-bottom: 7px;
+        font-size: 14px;
+    }
 }
 
 .task-text {
@@ -32,6 +37,10 @@ export default {
     text-align: center;
     font-size: 22px;
     font-weight: 400;
+
+    @media (max-width: 575px) {
+        font-size: 19px;
+    }
 }
 
 .task-image {
