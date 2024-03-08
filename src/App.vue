@@ -6,19 +6,37 @@
       <AccountInfo />
     </v-row>
     <v-row>
-      <v-col cols="1">
+      <v-col cols="1" class="d-flex justify-start align-start">
         <CloseButtonIcon />
       </v-col>
-      <v-col cols="10">
+      <v-col cols="10" class="d-flex justify-center align-start">
         <MainContent />
       </v-col>
-      <v-col cols="1">
-        <HelpButtonIcon />
+      <v-col cols="1" class="d-flex justify-end align-start">
+        <v-dialog transition="dialog-bottom-transition" width="auto">
+          <template v-slot:activator="{ props: activatorProps }">
+            <HelpButtonIcon v-bind="activatorProps" />
+          </template>
+
+          <template v-slot:default="{ isActive }">
+            <v-card>
+
+              <v-card-text class="text-h2 pa-12"> Hello world! </v-card-text>
+
+              <v-card-actions class="justify-end">
+                <v-btn text="Close" @click="isActive.value = false"></v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
+
       </v-col>
     </v-row>
   </v-container>
 
   <AnswerButtonsBlock />
+
+
 </template>
 
 <script>
