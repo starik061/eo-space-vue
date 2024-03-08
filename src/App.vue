@@ -20,7 +20,7 @@
 
           <template v-slot:default="{ isActive }">
             <v-card>
-              <v-card-text class="text-h2 pa-12"> Hello world! </v-card-text>
+              <v-card-text class="modal-text pa-12"> Hello world! </v-card-text>
               <v-card-actions class="justify-end">
                 <v-btn text="Close" @click="isActive.value = false"></v-btn>
               </v-card-actions>
@@ -85,4 +85,14 @@ export default {
     await this.getTasks()
   }
 }
-</script>s
+</script>
+
+<style lang="scss" scoped>
+.modal-text {
+  font-size: 24px !important;
+
+  @media (max-width: 575px) {
+    font-size: 14px !important;
+  }
+}
+</style>
