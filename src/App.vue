@@ -47,6 +47,7 @@ import AnswerButtonsBlock from "@/components/AnswerButtonsBlock.vue";
 import CloseButtonIcon from "@/components/icons/CloseButtonIcon.vue";
 import HelpButtonIcon from "@/components/icons/HelpButtonIcon.vue";
 
+import { fetchTasksData } from "./api/index.js";
 
 
 export default {
@@ -60,6 +61,10 @@ export default {
 
   methods: {
 
+  },
+  async mounted() {
+    const resp = await fetchTasksData();
+    console.log(resp)
   }
 }
 </script>

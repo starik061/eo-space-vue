@@ -1,4 +1,3 @@
-import {  } from './valantisAPI'
+import { fetchTasksData } from './axios.js'
 
-
-export { }
+export { fetchTasksData }
