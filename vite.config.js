@@ -1,16 +1,15 @@
+import { fileURLToPath, URL } from 'node:url'
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/eo-space-vue/',
   plugins: [vue()],
-  server: {
-    proxy: {
-      'eo-space-vue/db': {
-        target: 'http://localhost:5173/eo-space-vue/', // Замените на URL вашего локального сервера с файлом tasks.json
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/db/, '')
-      }
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })
