@@ -1,9 +1,10 @@
 <template>
+    <audio class="visually-hidden" type="audio/mpeg" ref="audio" />
     <form class="btn-container" v-if="answerOptions" @submit.prevent="handleSubmit">
         <template v-for="(option, optionIndex) in answerOptions" :key="optionIndex">
             <input class="visually-hidden" :id="option" type="radio" :value="option" name="answer"
                 v-model="selectedAnswer" />
-            <label :for="option" class="btn">{{ option }}
+            <label :for="option" class="btn" @click="playAudio()">{{ option }}
             </label>
         </template>
 
@@ -12,6 +13,8 @@
 </template>
 
 <script>
+import answerClickSound from "/product_click.mp3"
+
 export default {
     props: {
         answerOptions: {
@@ -28,6 +31,8 @@ export default {
 
     methods: {
         handleSubmit() {
+            this.playAudio()
+
             if (!this.selectedAnswer) {
                 alert("Please select the answer");
                 return
@@ -35,6 +40,11 @@ export default {
 
             this.$emit("checkAnswer", this.selectedAnswer)
             this.selectedAnswer = null;
+        },
+        playAudio() {
+            const audio = this.$refs.audio;
+            audio.src = answerClickSound;
+            audio.play();
         }
     }
 }
