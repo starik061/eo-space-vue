@@ -2,7 +2,7 @@
   {
     "task text": "Which shape shows thirds?",
     "task conditions": "Choose the right answer",
-    "task image": "/public/tasks_images/task_img.png",
+    "task image": "tasks_images/task_img.png",
     "correct answers": "A",
     "answer options": ["A", "B", "C"]
   },

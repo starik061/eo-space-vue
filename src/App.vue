@@ -70,14 +70,32 @@ export default {
       }
     },
 
-    checkAnswer(payload) {
+    async checkAnswer(payload) {
       if (payload === this.tasksData[this.currentTask - 1]["correct answers"]) {
+        await this.$tasksStore.changeResults(true);
+        // refresh store results data
         alert("Your answer is CORRECT!!! CONGRATULATIONS!!!");
-        this.currentTask += 1;
       } else {
+        await this.$tasksStore.changeResults(false);
         alert(`UPSS...!!Your answer is INCORRECT!!! Correct answer is ${this.tasksData[this.currentTask - 1]["correct answers"]}`);
-        this.currentTask += 1;
+
       }
+
+      if (this.currentTask === this.tasksData.length) {
+        console.log("this.$tasksStore.getResults", this.$tasksStore.getResults)
+        let correctAnswersNumber = this.$tasksStore.getResults.reduce((acc, answer) => {
+          console.log(answer)
+          if (answer) {
+            return acc + 1
+          } else {
+            return acc;
+          }
+        }, 0);
+        alert(`You give ${correctAnswersNumber} from ${this.tasksData.length} questions `)
+        return
+      }
+
+      this.currentTask += 1;
     }
   },
 
