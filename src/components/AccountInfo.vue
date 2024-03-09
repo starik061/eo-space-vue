@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import EnergyCoinIcon from "@/components/icons/EnergyCoinIcon.vue"
+import EnergyCoinIcon from "/src/components/icons/EnergyCoinIcon.vue"
 
 export default {
     components: { EnergyCoinIcon },

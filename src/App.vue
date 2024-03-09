@@ -36,11 +36,11 @@
 </template>
 
 <script>
-import AccountInfo from "@/components/AccountInfo.vue";
-import MainContent from "@/components/MainContent.vue";
-import AnswerButtonsBlock from "@/components/AnswerButtonsBlock.vue";
-import CloseButtonIcon from "@/components/icons/CloseButtonIcon.vue";
-import HelpButtonIcon from "@/components/icons/HelpButtonIcon.vue";
+import AccountInfo from "/src/components/AccountInfo.vue";
+import MainContent from "/src/components/MainContent.vue";
+import AnswerButtonsBlock from "/src/components/AnswerButtonsBlock.vue";
+import CloseButtonIcon from "/src/components/icons/CloseButtonIcon.vue";
+import HelpButtonIcon from "/src/components/icons/HelpButtonIcon.vue";
 
 import { fetchTasksData } from "./api/index.js";
 

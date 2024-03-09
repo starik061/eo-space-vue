@@ -3,7 +3,7 @@ import '../main.scss'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import { useTasksStore } from '@/store/tasks'
+import { useTasksStore } from '/src/store/tasks'
 // Добавляем экземпляр хранилища в глобальное свойство приложения
 
 import App from './App.vue'
